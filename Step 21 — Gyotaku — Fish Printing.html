@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step 21 — Gyotaku: Fish Printing</title>
+  <meta name="generator" content="Minerva">
+  <meta name="minerva-export-version" content="1">
+  <style>
+:root {
+  --fg: #1a1a1a;
+  --fg-muted: #4a4a4a;
+  --bg: #fcfcfc;
+  --accent: #0066cc;
+  --border: #e1e1e1;
+  --code-bg: #f5f5f5;
+  --code-border: #e5e5e5;
+  --quote-border: #d0d0d0;
+}
+* { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  padding: 48px 16px 96px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+article { max-width: 72ch; margin: 0 auto; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 2em 0 0.6em;
+}
+h1 { font-size: 2em; margin-top: 0; }
+h2 { font-size: 1.45em; border-bottom: 1px solid var(--border); padding-bottom: 0.2em; }
+h3 { font-size: 1.2em; }
+h4, h5, h6 { font-size: 1em; }
+p { margin: 0 0 1em; }
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 0.12em; }
+strong { font-weight: 600; }
+em { font-style: italic; }
+.wikilink-unresolved { color: var(--fg-muted); font-style: italic; }
+blockquote {
+  margin: 1em 0;
+  padding: 0.3em 1.2em;
+  border-left: 3px solid var(--quote-border);
+  color: var(--fg-muted);
+}
+ul, ol { margin: 0 0 1em; padding-left: 1.5em; }
+li > p { margin: 0 0 0.4em; }
+hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
+img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+}
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+  padding: 0.8em 1em;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9em;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+th, td { padding: 0.4em 0.8em; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--code-bg); font-weight: 600; }
+.footnote-ref {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 0.1em;
+}
+.footnote-ref a { text-decoration: none; }
+.footnote-back {
+  margin-left: 0.4em;
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.85em;
+}
+.footnote-back:hover { text-decoration: underline; }
+.footnotes {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  font-size: 0.9em;
+  color: var(--fg-muted);
+}
+.footnotes h2 {
+  border-bottom: none;
+  margin: 0 0 0.6em;
+  font-size: 1.15em;
+  color: var(--fg);
+}
+.footnotes ol { padding-left: 2em; }
+.footnotes li { margin-bottom: 0.4em; }
+.references {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  font-size: 0.95em;
+}
+.references h2 {
+  border-bottom: none;
+  margin: 0 0 0.6em;
+  font-size: 1.15em;
+}
+.references ol { padding-left: 1.5em; }
+.references li { margin-bottom: 0.6em; }
+.export-meta {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 0.8em;
+  text-align: right;
+}
+/* Tree-html bundle: per-note "References →" footer link to references.html (#300). */
+.bundle-refs-link {
+  margin-top: 2em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--border);
+  font-size: 0.9em;
+  text-align: right;
+}
+.bundle-refs-link a { color: var(--accent); text-decoration: none; }
+.bundle-refs-link a:hover { text-decoration: underline; }
+
+/* highlight.js token styling — minimal light theme so code fences
+ * render readably without pulling an external stylesheet. */
+.hljs-comment, .hljs-quote { color: #7a8288; font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-addition { color: #8959a8; }
+.hljs-number, .hljs-literal, .hljs-variable, .hljs-template-variable, .hljs-tag .hljs-attr { color: #f5871f; }
+.hljs-string, .hljs-doctag, .hljs-link, .hljs-attribute { color: #718c00; }
+.hljs-title, .hljs-section, .hljs-name, .hljs-selector-id, .hljs-selector-class { color: #4271ae; }
+.hljs-type, .hljs-class .hljs-title { color: #c82829; }
+.hljs-symbol, .hljs-bullet, .hljs-built_in, .hljs-builtin-name { color: #3e999f; }
+.hljs-meta { color: #7a8288; }
+.hljs-deletion { color: #c82829; }
+
+@media print {
+  body { padding: 0; background: #fff; }
+  article { max-width: none; }
+  a { color: var(--fg); text-decoration: none; }
+  h1, h2, h3 { page-break-after: avoid; }
+  pre, blockquote, table, img { page-break-inside: avoid; }
+  .export-meta { display: none; }
+}
+
+.sitenav { max-width: 72ch; margin: 0 auto 2em; padding-bottom: 1em; border-bottom: 2px solid var(--border); }
+.sitenav a { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.05em; text-decoration: none; color: var(--fg); }
+.sitenav a:hover { color: var(--accent); }
+.pagenav { max-width: 72ch; margin: 2.5em auto 0; padding-top: 1.2em; display: flex; justify-content: space-between; gap: 1em; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.pagenav a { display: block; text-decoration: none; padding: 0.7em 1em; border: 1px solid var(--border); border-radius: 6px; color: var(--fg); font-size: 0.92em; line-height: 1.35; flex: 1 1 0; }
+.pagenav a:hover { border-color: var(--accent); color: var(--accent); }
+.pagenav .next { text-align: right; }
+.pagenav .spacer { flex: 1 1 0; }
+.pagenav small { display: block; color: var(--fg-muted); font-weight: 600; text-transform: uppercase; font-size: 0.7em; letter-spacing: 0.04em; margin-bottom: 0.2em; }
+</style>
+</head>
+<body class="minerva-export">
+  
+  <article>
+<nav class="sitenav"><a href="index.html">&#127807; Natural Dye &amp; Eco Printing</a></nav>
+<h1>Step 21 — Gyotaku: Fish Printing</h1>
+<p>Gyotaku (pronounced <em>gyo-TAH-koo</em>) is a Japanese printmaking tradition in which an actual fish is inked and pressed onto paper or fabric to produce a lifelike impression of its body. The word breaks down simply: <em>gyo</em> means fish, <em>taku</em> means rubbing or impression. Though it sounds exotic, the technique is closely related to the leaf and plant printing you may already have tried in eco printing — the logic is the same, only the subject has fins.</p>
+<hr>
+<h2>A Brief History</h2>
+<p>Gyotaku originated in Japan, most likely in the early nineteenth century among fishermen and the samurai class. The leading theory is that fishermen used it as a practical record — before photography, pressing a fish onto paper was the most accurate way to document a prized catch: its exact size, species, and form preserved in ink. These prints were records of achievement as much as art objects.</p>
+<p>The oldest known surviving gyotaku print dates to around 1839 and depicts a <em>tai</em> (red sea bream), a fish with deep cultural significance in Japan as a symbol of good luck and celebration. Over the following decades the practice spread from fishing culture into formal art, and by the Meiji era (1868–1912) gyotaku had been adopted by artists as a serious printmaking discipline. Today it is practised worldwide, both as folk craft and as fine art, and competitive anglers sometimes still use it to record trophy fish before releasing them back into the water — a living catch-and-release record.</p>
+<p>In Western countries gyotaku arrived primarily through Japanese-American communities and through martial arts and fishing culture in the mid-twentieth century. It has since been embraced by nature artists, textile printmakers, and science educators alike.</p>
+<hr>
+<h2>How Gyotaku Connects to Eco Printing</h2>
+<p>If you have worked through <a href="Step 14 — Bundling and Steaming Techniques.html">Step 14 — Bundling and Steaming Techniques</a> or <a href="Step 15 — Eco Printing on Paper.html">Step 15 — Eco Printing on Paper</a>, gyotaku will feel immediately familiar. In eco printing you press a leaf onto fabric or paper and transfer its pigments and tannins through heat and pressure. In gyotaku you press a fish (or other textured subject) onto the surface using ink or paint and transfer its form through direct contact. Both are <em>contact printing</em> — the subject itself is the printing block.</p>
+<p>The key difference is that gyotaku does not typically rely on the fish’s own pigments; instead you apply an external ink or paint to the fish’s surface. This makes gyotaku more controllable and more predictable than eco printing, but it also means the aesthetic is different: you are capturing form and texture rather than colour chemistry.</p>
+<hr>
+<h2>The Two Main Methods</h2>
+<p>There are two traditional approaches, and modern practitioners often combine elements of both.</p>
+<p><strong>Direct method (chokusetsu-ho):</strong> Ink or paint is applied directly to the fish, and the paper or fabric is laid on top and gently rubbed by hand to pick up the impression. The print is then lifted off. This produces a laterally reversed image (like a mirror image) and preserves very fine surface detail — individual scales, fin rays, and the texture of the lips are all captured. It is the more traditional method and the one most commonly taught to beginners.</p>
+<p><strong>Indirect method (kansetsu-ho):</strong> The paper or fabric is laid over the fish first, and then ink is dabbed onto the paper <em>through</em> the surface of the fish using a soft pad or brush. This method is more demanding — it requires more sensitivity to feel the underlying form — but it produces an image that is the correct orientation (not reversed) and can have a softer, more painterly quality. It is the method favoured by many fine-art gyotaku practitioners today.</p>
+<hr>
+<h2>Materials You Will Need</h2>
+<p>The barrier to entry is low. For your first print, you need:</p>
+<ul>
+<li><strong>A fish</strong> — fresh is best, with firm flesh and clear scales. Whole flat fish (flounder, sole, snapper) are easiest for beginners because they lie flat. A fish from a fishmonger works perfectly; you do not need to catch it yourself.</li>
+<li><strong>Ink or paint</strong> — traditional Japanese gyotaku uses <em>sumi</em> (black ink made from soot and animal glue), which produces rich, brushwork-quality results. For beginners, water-based block-printing ink, fabric ink (for printing on cloth), or even acrylic paint thinned slightly with water all work well. Avoid oil-based inks for your first attempts — they are harder to clean and less forgiving.</li>
+<li><strong>Paper or fabric</strong> — for paper, thin <em>washi</em> (Japanese rice paper) or tissue paper conforms best to the fish’s surface. For fabric printing, a tightly woven natural-fibre cloth (cotton or silk) works well and connects directly to the <a href="Step 05 — Natural Fibres and Fabric Preparation.html">Step 05 — Natural Fibres and Fabric Preparation</a> principle that natural fibres accept dye and ink more readily than synthetics.</li>
+<li><strong>Soft brushes and sponges</strong> — for applying ink evenly.</li>
+<li><strong>Pins or a non-slip surface</strong> — to hold the fish steady while you work.</li>
+<li><strong>Acrylic eyes</strong> — many practitioners paint or glue a decorative eye onto the finished print, since the eye is difficult to capture in the printing process itself.</li>
+</ul>
+<hr>
+<h2>Step-by-Step: Your First Gyotaku Print (Direct Method)</h2>
+<p><strong>1. Prepare the fish.</strong> Rinse and pat the fish completely dry — moisture is the enemy of a clean ink transfer. Remove any excess slime. If the fish has a strong curve to its body, you can prop it with crumpled paper towels to make it lie flat.</p>
+<p><strong>2. Position the fish.</strong> Lay it on a flat, protected surface with the more photogenic side facing up. Arrange the fins in an open, natural position and use pins pushed into a foam board, or small rolls of tape, to hold them in place.</p>
+<p><strong>3. Apply the ink.</strong> Using a brush or sponge, apply a thin, even layer of ink over the entire surface of the fish — scales, fins, and head. Work in the direction of the scales. Thin coats give better detail than thick ones; a thick coat fills the spaces between scales and loses texture. Apply more ink to areas that tend to be pale (the belly), less to areas with naturally strong relief (the lateral line along the side).</p>
+<p><strong>4. Make the print.</strong> Carefully lay your paper or fabric over the fish, starting at one end. Gently press with your fingertips, working outward from the centre to avoid air pockets. Feel the fish’s form through the paper and rub gently — enough to transfer the ink, not so much that the paper slides and smears. Pay extra attention to the fins, which lift easily.</p>
+<p><strong>5. Lift and reveal.</strong> Peel the paper back in one smooth movement, starting from the tail end. Lay the print flat to dry.</p>
+<p><strong>6. Add the eye and finishing touches.</strong> Once dry, use a fine brush and ink or paint to add detail — the eye is the most important. Many gyotaku artists also add colour washes at this stage, painting the print with watercolour or diluted ink to suggest the fish’s natural hues. This step transforms a monochrome impression into something approaching a natural history illustration.</p>
+<p><strong>7. Clean the fish.</strong> Rinse and wash the fish immediately after printing. A fish that has been printed with water-based ink is still perfectly edible — many practitioners cook and eat their subjects after printing.</p>
+<hr>
+<h2>Choosing Your Ink Colours</h2>
+<p>Traditional gyotaku is often black (sumi ink on white washi), which emphasises form and scale texture in the manner of classical East Asian brush painting. But colour is equally valid. You can:</p>
+<ul>
+<li>Use a single colour (blue-grey for a mackerel, warm gold for a snapper) applied to the whole fish.</li>
+<li>Build colour in layers — a base ink, then hand-painted colour washes once the print is dry.</li>
+<li>Work with natural pigments and inks where these have sufficient body, connecting back to <a href="Step 07 — Plant Dye Sources.html">Step 07 — Plant Dye Sources</a> — walnut ink, iron-modified oak gall, and strong madder extract can all be used, though results are less crisp than commercial printing inks.</li>
+</ul>
+<hr>
+<h2>Beyond Fish: Other Subjects</h2>
+<p>Once you understand the direct-method principle, any textured, firm object can be printed: crab shells, scallops, lobster claws, seed pods, bark, carved wooden blocks, and heavily textured leaves all yield beautiful results. The boundary between gyotaku and the contact printing you practised in eco printing dissolves — they are points on the same continuum of impression-making.</p>
+<hr>
+<h2>Gyotaku in the Classroom and as Conservation Art</h2>
+<p>Because gyotaku requires no specialist equipment and produces scientifically accurate records of fish morphology, it has been widely adopted in environmental education. Students can print locally caught fish, identify species, learn anatomy, and engage with ideas of conservation and catch-and-release fishing — all through a single art-making session. Several wildlife artists use gyotaku prints as the basis for natural history illustrations, finding that no photograph captures scale texture and fin structure as faithfully as a direct contact print.</p>
+<hr>
+
+
+    <footer class="export-meta">
+      <p>Exported from Minerva on 2026-08-09T18:27:38.880Z.</p>
+    </footer>
+  <nav class="pagenav">
+<a class="prev" href="Step 20 — Where to Learn More — Resources and Community.html"><small>&larr; Previous</small>Step 20 — Where to Learn More — Resources and Community</a>
+<a class="next" href="Bibliography and Sources.html"><small>Next &rarr;</small>Bibliography and Sources</a>
+</nav>
+</article>
+</body>
+</html>

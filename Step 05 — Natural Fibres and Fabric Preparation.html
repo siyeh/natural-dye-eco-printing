@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step 05 — Natural Fibres and Fabric Preparation</title>
+  <meta name="generator" content="Minerva">
+  <meta name="minerva-export-version" content="1">
+  <style>
+:root {
+  --fg: #1a1a1a;
+  --fg-muted: #4a4a4a;
+  --bg: #fcfcfc;
+  --accent: #0066cc;
+  --border: #e1e1e1;
+  --code-bg: #f5f5f5;
+  --code-border: #e5e5e5;
+  --quote-border: #d0d0d0;
+}
+* { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  padding: 48px 16px 96px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+article { max-width: 72ch; margin: 0 auto; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 2em 0 0.6em;
+}
+h1 { font-size: 2em; margin-top: 0; }
+h2 { font-size: 1.45em; border-bottom: 1px solid var(--border); padding-bottom: 0.2em; }
+h3 { font-size: 1.2em; }
+h4, h5, h6 { font-size: 1em; }
+p { margin: 0 0 1em; }
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 0.12em; }
+strong { font-weight: 600; }
+em { font-style: italic; }
+.wikilink-unresolved { color: var(--fg-muted); font-style: italic; }
+blockquote {
+  margin: 1em 0;
+  padding: 0.3em 1.2em;
+  border-left: 3px solid var(--quote-border);
+  color: var(--fg-muted);
+}
+ul, ol { margin: 0 0 1em; padding-left: 1.5em; }
+li > p { margin: 0 0 0.4em; }
+hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
+img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+}
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+  padding: 0.8em 1em;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9em;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+th, td { padding: 0.4em 0.8em; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--code-bg); font-weight: 600; }
+.footnote-ref {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 0.1em;
+}
+.footnote-ref a { text-decoration: none; }
+.footnote-back {
+  margin-left: 0.4em;
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.85em;
+}
+.footnote-back:hover { text-decoration: underline; }
+.footnotes {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  font-size: 0.9em;
+  color: var(--fg-muted);
+}
+.footnotes h2 {
+  border-bottom: none;
+  margin: 0 0 0.6em;
+  font-size: 1.15em;
+  color: var(--fg);
+}
+.footnotes ol { padding-left: 2em; }
+.footnotes li { margin-bottom: 0.4em; }
+.references {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  font-size: 0.95em;
+}
+.references h2 {
+  border-bottom: none;
+  margin: 0 0 0.6em;
+  font-size: 1.15em;
+}
+.references ol { padding-left: 1.5em; }
+.references li { margin-bottom: 0.6em; }
+.export-meta {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 0.8em;
+  text-align: right;
+}
+/* Tree-html bundle: per-note "References →" footer link to references.html (#300). */
+.bundle-refs-link {
+  margin-top: 2em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--border);
+  font-size: 0.9em;
+  text-align: right;
+}
+.bundle-refs-link a { color: var(--accent); text-decoration: none; }
+.bundle-refs-link a:hover { text-decoration: underline; }
+
+/* highlight.js token styling — minimal light theme so code fences
+ * render readably without pulling an external stylesheet. */
+.hljs-comment, .hljs-quote { color: #7a8288; font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-addition { color: #8959a8; }
+.hljs-number, .hljs-literal, .hljs-variable, .hljs-template-variable, .hljs-tag .hljs-attr { color: #f5871f; }
+.hljs-string, .hljs-doctag, .hljs-link, .hljs-attribute { color: #718c00; }
+.hljs-title, .hljs-section, .hljs-name, .hljs-selector-id, .hljs-selector-class { color: #4271ae; }
+.hljs-type, .hljs-class .hljs-title { color: #c82829; }
+.hljs-symbol, .hljs-bullet, .hljs-built_in, .hljs-builtin-name { color: #3e999f; }
+.hljs-meta { color: #7a8288; }
+.hljs-deletion { color: #c82829; }
+
+@media print {
+  body { padding: 0; background: #fff; }
+  article { max-width: none; }
+  a { color: var(--fg); text-decoration: none; }
+  h1, h2, h3 { page-break-after: avoid; }
+  pre, blockquote, table, img { page-break-inside: avoid; }
+  .export-meta { display: none; }
+}
+
+.sitenav { max-width: 72ch; margin: 0 auto 2em; padding-bottom: 1em; border-bottom: 2px solid var(--border); }
+.sitenav a { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.05em; text-decoration: none; color: var(--fg); }
+.sitenav a:hover { color: var(--accent); }
+.pagenav { max-width: 72ch; margin: 2.5em auto 0; padding-top: 1.2em; display: flex; justify-content: space-between; gap: 1em; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.pagenav a { display: block; text-decoration: none; padding: 0.7em 1em; border: 1px solid var(--border); border-radius: 6px; color: var(--fg); font-size: 0.92em; line-height: 1.35; flex: 1 1 0; }
+.pagenav a:hover { border-color: var(--accent); color: var(--accent); }
+.pagenav .next { text-align: right; }
+.pagenav .spacer { flex: 1 1 0; }
+.pagenav small { display: block; color: var(--fg-muted); font-weight: 600; text-transform: uppercase; font-size: 0.7em; letter-spacing: 0.04em; margin-bottom: 0.2em; }
+</style>
+</head>
+<body class="minerva-export">
+  
+  <article>
+<nav class="sitenav"><a href="index.html">&#127807; Natural Dye &amp; Eco Printing</a></nav>
+<h1>Step 05 — Natural Fibres and Fabric Preparation</h1>
+<p>Before a single drop of dye touches your fabric, what that fabric is made of — and how you’ve prepared it — will determine almost everything about the final result. This note walks you through choosing the right fibre and getting it ready to receive colour.</p>
+<h2>Choosing Your Fibre</h2>
+<p>Natural dyes work on natural fibres. Synthetic fabrics (polyester, nylon, acrylic) simply don’t absorb plant-based pigments in any meaningful way, so always start with 100% natural material.</p>
+<p><strong>Wool</strong> is the beginner’s best friend. Its scaly protein structure grabs mordants and dyes eagerly, producing deep, saturated colours with relatively little effort. It’s also forgiving — minor temperature fluctuations won’t ruin it (though agitation will cause it to felt, so handle gently).</p>
+<p><strong>Silk</strong> takes dye even more intensely than wool and produces luminous, jewel-like colours. It’s more delicate and more expensive, but if you want to see what a dye is truly capable of, silk will show you.</p>
+<p><strong>Cotton and linen</strong> are trickier. Their cellulose structure has fewer natural bonding sites for most dyes (see <a href="Step 04 — The Science of Colour and Fibre.html">Step 04 — The Science of Colour and Fibre</a> for why). You can still get beautiful results, but you’ll need to do more preparation work — specifically, a tannin pre-treatment or a higher mordant load.</p>
+<p><strong>Alpaca, cashmere, and other protein fibres</strong> behave similarly to wool and are excellent choices once you’re past the beginner stage.</p>
+<h2>Rayon — The Semi-Synthetic Cellulose Fibre</h2>
+<p>Rayon occupies an unusual middle ground in the fibre world. It is a <em>manufactured</em> fibre made from regenerated cellulose — plant material (typically wood pulp from beech, pine, eucalyptus, or bamboo) that has been dissolved into a liquid and re-spun into new fibres. Because it starts as a plant but is heavily transformed by chemistry, rayon is considered <strong>semi-synthetic</strong>: not a natural fibre, but not a fully synthetic one like polyester either.</p>
+<p>The most common form is <strong>viscose rayon</strong>, known for its soft, drapey, silky hand. Two upgraded versions are worth knowing: <strong>Modal</strong>, a denser and more dimensionally stable viscose, and <strong>Lyocell</strong>, most widely sold under the brand name <strong>Tencel</strong> — which gets its own section below.</p>
+<h3>How Rayon Fits the Fibre Matrix</h3>
+<p>Despite its industrial origins, rayon’s regenerated cellulose structure behaves chemically almost identically to cotton in the dyebath. That means it sits firmly in the <strong>cellulose family</strong> alongside cotton and linen, and requires the same preparation approach:</p>
+<ul>
+<li><strong>Scouring</strong> — essential, as with all fibres.</li>
+<li><strong>Tannin pre-treatment</strong> — recommended before mordanting, just as with cotton, to give the fibre extra bonding sites.</li>
+<li><strong>Mordanting</strong> — required. Alum (potassium aluminium sulphate) at 15–20% WOF works well. Rayon’s high absorbency means it can take up mordants and dyes readily, often producing rich, vibrant colour.</li>
+</ul>
+<p>One important difference from cotton: rayon fibres are noticeably weaker when wet and can lose their shape if handled roughly. Keep your dyebath at a gentle simmer rather than a rolling boil, avoid prolonged agitation, and rinse carefully.</p>
+<h3>A Note on Sustainability</h3>
+<p>Rayon’s environmental story is complicated. The raw material is renewable plant cellulose, but the production process is energy- and water-intensive, and some supply chains have been linked to deforestation. If sustainability is a priority for you (explored in depth in <a href="Step 19 — Sustainability and Ethics in Natural Dyeing.html">Step 19 — Sustainability and Ethics in Natural Dyeing</a>), seek out FSC-certified viscose or favour Lyocell/Tencel, whose closed-loop process is far cleaner.</p>
+<h2>Tencel — Lyocell’s Better Half</h2>
+<p><strong>Tencel</strong> is the brand name owned by Austrian company Lenzing AG for their lyocell fibre, and it has become so widely used that many people treat “Tencel” and “lyocell” as synonyms. Like rayon, it is made from wood-pulp cellulose — typically from sustainably managed eucalyptus, beech, or oak. The crucial difference is <em>how</em> that cellulose is turned into fibre.</p>
+<p>Viscose rayon uses harsh chemicals (notably carbon disulfide) in an open-loop process where a significant proportion of the solvent is lost as industrial waste. Tencel/lyocell uses a non-toxic organic solvent called NMMO (N-methylmorpholine N-oxide) in a <strong>closed-loop process</strong>: approximately 99% of the solvent is recovered, purified, and fed back into the system. Almost no chemical waste escapes. This makes Tencel the most environmentally responsible choice among the regenerated cellulose fibres — and arguably among all fibres commonly available to dyers.</p>
+<h3>What it Feels and Acts Like</h3>
+<p>Tencel has a silky softness that rivals viscose rayon, but it is considerably stronger — including when wet. Where a viscose scarf can feel fragile and distort easily in the dyebath, a Tencel scarf retains its shape and handles moderate heat without complaint. It is also breathable and highly moisture-absorbent, both of which make it an excellent candidate for natural dyeing.</p>
+<h3>Dyeing Tencel</h3>
+<p>In the dyebath, Tencel behaves like all other cellulose fibres. The preparation sequence is the same as for cotton:</p>
+<ol>
+<li><strong>Scour</strong> in warm water with a pH-neutral soap.</li>
+<li><strong>Tannin pre-treat</strong> (oak gall, black tea, or sumac) to build bonding sites.</li>
+<li><strong>Mordant</strong> with alum at 15–20% WOF, simmering gently for 45–60 minutes.</li>
+<li><strong>Dye</strong> at a moderate simmer — no need to baby it the way you would viscose.</li>
+</ol>
+<p>Tencel takes colour evenly and cleanly, often producing particularly clear, bright results. Its superior wet strength means you can stir and move it in the dyebath without anxiety, and you’ll find it resists patchiness better than cotton when conditions aren’t perfect.</p>
+<h3>Tencel vs. Viscose — At a Glance</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Viscose Rayon</th>
+<th>Tencel / Lyocell</th>
+<th>Cotton</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>Wood pulp</td>
+<td>Wood pulp</td>
+<td>Cotton plant</td>
+</tr>
+<tr>
+<td>Process</td>
+<td>Chemical-intensive, open-loop</td>
+<td>Closed-loop, ~99% solvent recovery</td>
+<td>Mechanical + water</td>
+</tr>
+<tr>
+<td>Wet strength</td>
+<td>Weak — handle carefully</td>
+<td>Strong — robust in dyebath</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Dye preparation</td>
+<td>Cellulose method</td>
+<td>Cellulose method</td>
+<td>Cellulose method</td>
+</tr>
+<tr>
+<td>Colour result</td>
+<td>Rich, vibrant</td>
+<td>Clear, even, vibrant</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Sustainability</td>
+<td>Moderate concern</td>
+<td>Best in class</td>
+<td>Depends on farming method</td>
+</tr>
+<tr>
+<td>Biodegradable?</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>If you can source Tencel fabric (it is increasingly available from specialty textile retailers and online), it is an ideal choice for a dyer who cares about both beautiful results and environmental responsibility. Think of it as a cotton alternative with a silkier hand and a cleaner conscience.</p>
+<h2>The Full Fibre Comparison Table</h2>
+<table>
+<thead>
+<tr>
+<th>Fibre</th>
+<th>Family</th>
+<th>Mordant needed?</th>
+<th>Tannin pre-treat?</th>
+<th>Dye uptake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wool</td>
+<td>Protein</td>
+<td>Yes</td>
+<td>No</td>
+<td>Deep, easy</td>
+</tr>
+<tr>
+<td>Silk</td>
+<td>Protein</td>
+<td>Yes</td>
+<td>No</td>
+<td>Brilliant</td>
+</tr>
+<tr>
+<td>Cotton</td>
+<td>Cellulose</td>
+<td>Yes</td>
+<td>Recommended</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Linen</td>
+<td>Cellulose</td>
+<td>Yes</td>
+<td>Recommended</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Rayon / Viscose</td>
+<td>Cellulose</td>
+<td>Yes</td>
+<td>Recommended</td>
+<td>Good — vibrant</td>
+</tr>
+<tr>
+<td>Modal</td>
+<td>Cellulose</td>
+<td>Yes</td>
+<td>Recommended</td>
+<td>Good — vibrant</td>
+</tr>
+<tr>
+<td>Lyocell / Tencel</td>
+<td>Cellulose</td>
+<td>Yes</td>
+<td>Recommended</td>
+<td>Good — clear and even</td>
+</tr>
+<tr>
+<td>Polyester</td>
+<td>Synthetic</td>
+<td>—</td>
+<td>—</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h2>Scouring — The Essential First Step</h2>
+<p><em>Scouring</em> means washing your fabric thoroughly before dyeing. Even “new” fabric from a shop carries sizing (a stiffening agent applied during manufacture), oils from spinning, and handling residues — all of which form a barrier between the fibre and the dye. If you skip scouring, colour uptake will be patchy and uneven.</p>
+<p>For <strong>protein fibres</strong>, simmer gently in warm water with a small amount of pH-neutral dish soap or dedicated wool wash for 30–45 minutes. Avoid sudden temperature changes and agitation. Rinse thoroughly.</p>
+<p>For <strong>cellulose fibres</strong> (including rayon and Tencel), you can use a slightly higher temperature and a little soda ash (sodium carbonate) to remove plant waxes and oils more effectively. Handle viscose rayon especially gently — avoid wringing or bunching while wet. Tencel can tolerate a little more movement.</p>
+<p>After scouring, your fabric should feel clean and slightly limp, with no slippery or stiff patches.</p>
+<h2>Tannin Pre-Treatment for Cotton, Linen, Rayon, and Tencel</h2>
+<p>Tannins are plant compounds that bond naturally to cellulose and also attract metallic mordants. By soaking cotton, linen, rayon, or Tencel in a tannin solution before mordanting, you’re essentially giving the fibre the bonding sites it was born without.</p>
+<p>Common tannin sources include oak galls, black tea, sumac leaves, and pomegranate rind. Simmer the tannin material in water, strain, then add your wet, scoured fabric and simmer for an hour. Rinse and proceed to mordanting. You’ll find tannins discussed further in <a href="Step 09 — Iron, Tannins, and Mineral Dyes.html">Step 09 — Iron, Tannins, and Mineral Dyes</a>.</p>
+<h2>Mordanting</h2>
+<p>After scouring (and tannin treatment if needed), the fabric is ready to mordant. Most dyers mordant before dyeing — this is called <em>pre-mordanting</em> — though mordanting during or after the dyebath is also possible and produces subtly different results.</p>
+<p>The standard alum mordant bath: dissolve potassium aluminium sulphate in hot water at roughly 15–20% weight of fibre (WOF), add your wet fabric, and simmer for 45–60 minutes. Remove, squeeze gently, and the fabric is ready for the dyebath. Full mordant options and ratios are in <a href="Step 06 — Mordants — Making Colour Stick.html">Step 06 — Mordants — Making Colour Stick</a>.</p>
+<h2>Keeping Notes</h2>
+<p>From your very first dye session, record what fibre you used, how you scoured it, what mordant and percentage you applied, and what dye you used. Colour is reproducible only if you know what you did. A simple notebook or a note in this thoughtbase works perfectly.</p>
+<hr>
+
+
+    <footer class="export-meta">
+      <p>Exported from Minerva on 2026-08-09T18:27:35.074Z.</p>
+    </footer>
+  <nav class="pagenav">
+<a class="prev" href="Step 04 — The Science of Colour and Fibre.html"><small>&larr; Previous</small>Step 04 — The Science of Colour and Fibre</a>
+<a class="next" href="Step 06 — Mordants — Making Colour Stick.html"><small>Next &rarr;</small>Step 06 — Mordants — Making Colour Stick</a>
+</nav>
+</article>
+</body>
+</html>
